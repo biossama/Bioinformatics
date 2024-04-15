@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to microviridae {% endblock %}</h1>
+    <table o
+style="border:1px solid black;margin-left:auto;margin-right:auto;">
+   
+       <td style="border: 1px solid black; text-align: center;">LOCUS</td>
+       <td style="border: 1px solid black; text-align: center;">SOURCE</td>
+       <td style="border: 1px solid black; text-align: center;">TAXONOMY</td>
+       <td style="border: 1px solid black; text-align: center;">NOMBER OF GENES</td>
+       <td style="border: 1px solid black; text-align: center;">CG CONTENT</td>
+     </tr>
+    </table>
+
+    {% for post in posts %}
+        <a href="{{ url_for('post', post_id=post['id']) }}">
+        </a>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

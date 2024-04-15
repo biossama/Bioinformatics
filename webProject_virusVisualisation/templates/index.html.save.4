@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to microviridae {% endblock %}</h1>
+
+      
+
+    <table width="80%" style="border:1px solid black;margin-left:auto;margin-right:auto;">
+
+     <tr> 
+       <td style="width: 8px; border: 1px solid black; text-align: center;">LOCUS</td>
+       <td style="width: 8px; border: 1px solid black; text-align: center;">SOURCE</td>
+       <td style="width: 8px; border: 1px solid black; text-align: center;">TAXONOMY</td>
+       <td style="width: 10px; border: 1px solid black; text-align: center;">NOMBER OF GENES</td>
+       <td style="width: 8px; border: 1px solid black; text-align: center;">CG CONTENT</td>
+     </tr>
+    </table>
+
+    {% for post in posts %}
+     endblock %}

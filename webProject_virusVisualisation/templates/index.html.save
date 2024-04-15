@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to microviridae {% endblock %}</h1>
+    <table>
+    <tr>
+       <td>LOCUS</td><td>SOURCE</td>
+    </tr>
+    </table>
+
+    {% for post in posts %}
+href="{{ url_for('post', post_id=post['id']) }}">
+        </a>
+        <hr>
+    <table>
+    <tr>
+       <td>LOCUS</td><td>SOURCE</td>
+    </tr>
+    </table>
+
+    {% endfor %}
+
+{% endblock %}

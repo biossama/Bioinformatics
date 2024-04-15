@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h6>{% block title %}<strong>Table of microviridae</strong>{% endblock %}</h6>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">LOCUS</th>
+                    <th style="text-align: center;">SOURCE</th>
+                    <th style="text-align: center;">TAXONOMY</th>
+                    <th style="text-align: center;">GENOME_SIZE</th>
+                    <th style="text-align: center;">NUMBER OF GENES</th>
+                    <th style="text-align: center;">CG CONTENT</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    <tr>
+                        <td style="text-align: center;"><a href="{{ url_for('post', post_id=post['id']) }}">{{ post['LOCUS'] }}</a></td>
+                        <td style="text-align: center;">{{ post['SOURCE'] }}</td>
+                        <td style="text-align: center;">{{ post['TAXONOMY'] }}</td>
+                        <td style="text-align: center;">{{ post['GENOME_SIZE'] }}</td>
+                        <td style="text-align: center;">{{ post['NUMBER_of_GENES'] }}</td>
+                        <td style="text-align: center;">{{ post['GC_CONTENT'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

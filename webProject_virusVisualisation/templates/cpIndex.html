@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h6>{% block title %}<strong> Table of microviridae</strong> {% endblock %}</h6>
+         
+
+    <table border= "3" width= "100%">
+
+     <tr> 
+       <th style="width: 8px; text-align: center;">LOCUS</th>
+       <th style="width: 8px; text-align: center;">SOURCE</th>
+       <th style="width: 8px; text-align: center;">TAXONOMY</th>
+       <th style="width: 8px; text-align: center;">GENOME_SIZE</th>
+       <th style="width: 8px; text-align: center;">NOMBER OF GENES</th>
+       <th style="width: 8px; text-align: center;">CG CONTENT</th>
+     </tr>
+    
+    {% for post in posts %}
+         
+     <table border= "3" width= "100%">
+       <tr>
+           <td style="width: 8px; border: 1px solid black; text-align: center;"><a href="{{ url_for('post', post_id=post['id']) }}">{{ post['LOCUS']}}</td></a>
+           <td style="width: 8px; border: 1px solid black; text-align: center;">{{ post['SOURCE']}}</td>
+           <td style="width: 8px; border: 1px solid black; text-align: center;">{{ post['TAXONOMY']}}</td>
+           <td style="width: 8px; border: 1px solid black; text-align: center;">{{ post['GENOME_SIZE']}}</td>
+           <td style="width: 8px; border: 1px solid black; text-align: center;">{{ post['NUMBER_of_GENES']}}</td>
+           <td style="width: 8px; border: 1px solid black; text-align: center;">{{ post['GC_content']}}</td>
+       </tr>
+       </table>
+  
+    {% endfor %}
+
+{% endblock %}

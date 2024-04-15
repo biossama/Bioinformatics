@@ -1,0 +1,38 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+
+   <h5><p> CG Content Distribution of the locus : {{ post['LOCUS']}} </p></h5>
+  <html>
+  
+    <head>
+       <script src="https://code.highcharts.com/highcharts.js"></script>
+       <script src="https://code.highcharts.com/modules/exporting.js"></script>
+       <div id="container"></div>
+      
+          <script type="text/javascript">
+       Highcharts.chart('container', {
+       title: {text: 'For genome size : {{post['GENOME_SIZE']}}' },
+       chart: { backgroundColor: '#E5E5E5'},
+
+       xAxis: {title: { text:"10 nt" },
+       categories:{{ post['ABSCISSE']}}  },
+       yAxis: { title: { text: " CG % "} },
+       series: [{ data: {{ post['ORDONNE']}} }]
+                                                });
+           </script>
+
+    </head>
+    <body>
+          <div id="monGraphique" style="width: 80%; height: 300px;">
+         </div>
+    </body>
+     <!--Footer-->
+    <footer style="background-color:black; height:auto;">
+
+    <h5 style="color:white; padding:20px; text-align:center;">CG Content Distribution</h5>
+     
+    </footer>
+
+  </html>
+{% endblock %}
