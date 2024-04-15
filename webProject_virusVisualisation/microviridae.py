@@ -81,22 +81,3 @@ x.field_names = ["LOCUS", "SOURCE", "TAXO", "GENOME SIZE", "NUMBER OF GENES", "G
 for a, b, c, d, e, f in zip(locus, source, taxo, leng, numGene, prCG):
 	x.add_row([a, b, c, d, e, f])                                                       # remplir notre tableau
 print(x)
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
-	
-	
-	
